@@ -78,6 +78,11 @@ public class Veiculo implements Serializable{
 		return Objects.equals(placa, other.placa);
 	}
 
+	@Override
+	public String toString() {
+		return "Veiculo [placa=" + placa + ", nome=" + nome + ", cor=" + cor + ", ano=" + ano + "]";
+	}
+
 
 	
 	
