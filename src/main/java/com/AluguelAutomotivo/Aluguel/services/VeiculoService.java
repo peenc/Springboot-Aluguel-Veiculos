@@ -24,5 +24,20 @@ public class VeiculoService {
 		return veiculoRepository.findAll();
 
 	}
-
+	
+	public Veiculo uptadeVeiculo(String placa, Veiculo obj) {
+		Veiculo veiculo = veiculoRepository.findByPlaca(placa);
+		updateData(veiculo, obj);
+		return veiculoRepository.save(veiculo);
+	}
+	
+	private void updateData(Veiculo veiculo, Veiculo obj) {
+		veiculo.setCor(obj.getCor());
+		
+	}
+	
+	public void deleteVeiculo(String placa) {
+		Veiculo veiculo = veiculoRepository.findByPlaca(placa);
+		veiculoRepository.delete(veiculo);
+	}
 }
